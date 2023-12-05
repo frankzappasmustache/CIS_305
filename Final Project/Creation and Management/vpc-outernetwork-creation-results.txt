@@ -1,0 +1,15 @@
+Welcome to Cloud Shell! Type "help" to get started.
+Your Cloud Platform project in this session is set to cloudstack-vpc.
+Use “gcloud config set project [PROJECT_ID]” to change to a different project.
+cloudstack00@cloudshell:~ (cloudstack-vpc)$ gcloud compute instances create vpc-outernetwork --project=cloudstack-vpc --zone=us-west2-a --machine-type=n2-standard-4 --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default --can-ip-forward --maintenance-policy=MIGRATE --provisioning-model=STANDARD --service-account=1048732236440-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --tags=http-server,https-server --create-disk=auto-delete=yes,boot=yes,device-name=vpc-outernetwork,image=projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20231101,mode=rw,size=128,type=projects/cloudstack-vpc/zones/us-west2-a/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=goog-ec-src=vm_add-gcloud --reservation-affinity=any --enable-nested-virtualization
+Created [https://www.googleapis.com/compute/v1/projects/cloudstack-vpc/zones/us-west2-a/instances/vpc-outernetwork].
+WARNING: Some requests generated warnings:
+ - Disk size: '128 GB' is larger than image size: '10 GB'. You might need to resize the root repartition manually if the operating system does not support automatic resizing. See https://cloud.google.com/compute/docs/disks/add-persistent-disk#resize_pd for details.
+
+NAME: vpc-outernetwork
+ZONE: us-west2-a
+MACHINE_TYPE: n2-standard-4
+PREEMPTIBLE: 
+INTERNAL_IP: 10.168.0.2
+EXTERNAL_IP: 34.94.148.8
+STATUS: RUNNING
